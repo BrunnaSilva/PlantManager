@@ -4,8 +4,10 @@ import { SvgFromUri } from 'react-native-svg'
 
 import waterdrop from '../assets/waterdrop.png'
 import { Button } from '../components/Button';
+import Style from './PlantSave.style';
 
 export function PlantSave() {
+  const styles = Style
 
   return (
     <ScrollView style={styles.container}>
@@ -29,34 +31,4 @@ export function PlantSave() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-      flex: 1,
-      //justifyContent: ''
-  },
-  title:{
 
-  },
-  about:{
-
-  },
-  controller: {
-
-  },
-  tipContainer:{
-
-  },
-  tipImage:{
-       
-  },
-  tipText:{
-
-  },
-  alertLabel:{
-
-  },
-  plantContainer:{
-
-  }
-
-});
