@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
-import { View, Text, StyleSheet, FlatList, ActivityIndicator }  from 'react-native'
+import { View, Text, FlatList, ActivityIndicator }  from 'react-native'
 
 import { EnviromentButton } from '../components/EnviromentButton'
 import { Header } from '../components/Header'
@@ -9,7 +9,7 @@ import { Load } from '../components/Load'
 import { PlantCardPrimary } from '../components/PlantCardPrimary'
 import api from '../services/api'
 import colors from '../styles/colors'
-import fonts from '../styles/fonts'
+import Style from './PlantSelect.style'
 
 interface EnviromentsProps{
     key: string,
@@ -29,6 +29,7 @@ interface PlantProps{
 };
 
 export function PlantSelect(){
+    const styles = Style
     const navigation = useNavigation()
     const [enviroments, setEnviroments] = useState<EnviromentsProps[]>([])
     const [enviromentsSelected, setEnviromentsSelected] = useState('all')
@@ -158,43 +159,3 @@ export function PlantSelect(){
     )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1, 
-        backgroundColor: colors.background,
-        //justifyContent: 'center',
-        //alignItems: 'center'
-    },
-    header:{
-        paddingHorizontal: 20
-    },
-    title:{
-        fontSize: 17,
-        color: colors.heading,
-        fontFamily: fonts.heading,
-        lineHeight: 20,
-        marginTop: 15
-    },
-    subtitle:{
-        fontSize: 17,
-        color: colors.heading,
-        fontFamily: fonts.text,
-        lineHeight: 20,
-    },
-    listContainer:{
-        marginTop: 18,
-        marginBottom: 18
-    },
-    enviromentList:{
-        height: 40,
-        justifyContent: 'center',
-        paddingBottom: 5,
-        marginLeft: 32,
-        marginRight: 32
-    },
-    plants:{
-        flex: 1,
-        paddingHorizontal: 12,
-        justifyContent: 'center'
-    }
-})
